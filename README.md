@@ -1,6 +1,6 @@
 # **Dockerized K8s vSphere**
 
-To access VMWare Tanzu server (K8s) CLI for CI/CD.
+To connect to VMWare Tanzu server for CI/CD.
 
 ## **Dockerized**
 
