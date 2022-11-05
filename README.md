@@ -43,19 +43,23 @@ Build container image :
 
 ```sh
 $ docker build -t k8svsphere:latest .
+
+# Record to your registry
+$ docker tag k8svsphere:latest YOUR_CONTAINER_REGISTRY/k8svsphere:latest
+$ docker push YOUR_CONTAINER_REGISTRY/k8svsphere:latest
 ```
 
 Run :
 
 ```sh
 # access to container
-$ docker run --rm -it --privileged k8svsphere:latest /bin/sh
+$ docker run --rm -it --privileged YOUR_CONTAINER_REGISTRY/k8svsphere:latest /bin/sh
 
 # using command only with device that NOT support TTY
-$ docker run --rm -i --privileged patharanor/k8svsphere:latest kubectl vsphere --help
+$ docker run --rm -i --privileged YOUR_CONTAINER_REGISTRY/k8svsphere:latest kubectl vsphere --help
 
 # using command only with device that support TTY
-$ docker run --rm -it --privileged k8svsphere:latest kubectl vsphere --help
+$ docker run --rm -it --privileged YOUR_CONTAINER_REGISTRY/k8svsphere:latest kubectl vsphere --help
 vSphere Plugin for kubectl.
 
 Usage:
