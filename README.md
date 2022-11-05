@@ -51,7 +51,10 @@ Run :
 # access to container
 $ docker run --rm -it --privileged k8svsphere:latest /bin/sh
 
-# using command only
+# using command only with device that NOT support TTY
+$ docker run --rm -i --privileged patharanor/k8svsphere:latest kubectl vsphere --help
+
+# using command only with device that support TTY
 $ docker run --rm -it --privileged k8svsphere:latest kubectl vsphere --help
 vSphere Plugin for kubectl.
 
